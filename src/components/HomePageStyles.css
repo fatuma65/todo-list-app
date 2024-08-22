@@ -1,0 +1,45 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+}
+.home-page {
+    height: 20rem;
+    position: relative;
+}
+.home-page h1 {
+    text-align: center;
+    margin-top: 80px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.home {
+    background-color: #000;
+    border-radius: 10px;
+    left: 50%;
+    position: absolute; 
+    transform: translate(-50%, -50%);
+}
+.task-form input {
+    width: 550px;
+    padding: 10px;
+    margin: 5px;
+    color: #000;
+    outline: none;
+    border: none;
+}
+ .btn {
+    background-color: #242e6b;
+    color: #fff;
+    padding: 10px;
+    font-weight: 600;
+    width: 150px;
+    margin: 5px;
+}
+.task {
+    display: flex;
+}
