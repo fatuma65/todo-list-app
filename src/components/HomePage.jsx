@@ -1,5 +1,4 @@
 import "./HomePageStyles.css";
-import CreateTasks from "./CreateTasks";
 import Tasks from "./Tasks";
 const HomePage = () => {
   return (
@@ -9,7 +8,6 @@ const HomePage = () => {
           <h1 className="text-6xl font-bold text-white">Just Do It</h1>
         </div>
         <div className="home text-white">
-          <CreateTasks />
           <Tasks />
         </div>
       </div>

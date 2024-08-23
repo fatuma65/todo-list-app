@@ -1,8 +1,8 @@
-import { AuthContext } from "./TodoContext"
-import { useContext } from "react"
+import { useContext } from "react";
+import { TodoContext } from "./TodoContext";
 
- const useTodo = () => {
-    const context = useContext(AuthContext)
-    return context
-}
+const useTodo = () => {
+  const context = useContext(TodoContext);
+  return context;
+};
 export default useTodo;
