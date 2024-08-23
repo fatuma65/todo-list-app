@@ -5,6 +5,7 @@
 
 body {
     margin: 0;
+    font-family: "Montserrat", sans-serif;
 }
 .home-page {
     height: 20rem;
@@ -22,7 +23,12 @@ body {
     border-radius: 10px;
     left: 50%;
     position: absolute; 
-    transform: translate(-50%, -50%);
+    height: auto;
+    transform: translate(-50%);
+    margin-top: -120px;
+    padding: 20px; 
+    overflow-y: auto; 
+    box-sizing: border-box;
 }
 .task-form input {
     width: 550px;
@@ -32,14 +38,74 @@ body {
     outline: none;
     border: none;
 }
- .btn {
-    background-color: #242e6b;
-    color: #fff;
-    padding: 10px;
-    font-weight: 600;
-    width: 150px;
-    margin: 5px;
+.btn:hover {
+    background-color: rgb(82, 169, 251);
 }
 .task {
+    display: flex;
+}
+.task-item.completed {
+    text-decoration: line-through;
+    color: red;
+}
+.btn-container {
+    display: flex;
+    background-color: #242e6b;
+    align-items: center;
+    width: 150px;
+    justify-content: center;
+    margin: 5px;
+
+}
+.btn-container i{
+    font-size: 21px;
+    margin: 5px;
+}
+.btn-container .btn1, .btn2, .btn {
+    font-weight: 600;
+}
+.btn-container:hover {
+    background-color: blueviolet;
+}
+.btn-container .btn1:hover {
+    background: none;
+}
+.btn2-container {
+    display: flex;
+    background-color: #242e6b;
+    align-items: center;
+    width: 150px;
+    padding: 8px;
+    justify-content: center;
+    margin: 5px;
+}
+.btn2-container:hover {
+    background-color: red;
+}
+.btn2-container i {
+    font-size: 21px;
+    margin: 5px;
+}
+.btn1-container i {
+    font-size: 21px;
+    margin: 5px;
+}
+.btn:hover {
+    background: none;
+
+}
+.btn1-container:hover {
+    background-color: rgb(20, 87, 231);
+}
+.btn1-container {
+    display: flex;
+    background-color: #242e6b;
+    align-items: center;
+    width: 150px;
+    padding: 8px;
+    justify-content: center;
+    margin: 5px;
+}
+.containers {
     display: flex;
 }

@@ -1,17 +1,30 @@
 import "./HomePageStyles.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useTodo from "../contexts/customHook";
-const CreateTasks = () => {
-  const [todo, setTodo] = useState("");
-  const {addTasks, tasks} = useTodo()
+const CreateTasks = ({editTaskId, setEditTaskId}) => {
+  const { addTasks, tasks, editTask} = useTodo();
+  const [todo, setTodo] = useState('');
+
+  useEffect(() => {
+    const taskToEdit = tasks.find((task) => task.id === editTaskId);
+    if (taskToEdit) {
+      setTodo(taskToEdit.text);
+    }
+  }, [editTaskId, tasks]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(todo);
-    addTasks(todo)
-    console.log(tasks)
-    setTodo( "" );
+    if (editTaskId) {
+      editTask(editTaskId,todo);
+      setTodo(editTaskId.text);
+      setEditTaskId(null);
+    }else {
+    addTasks(todo);
+    }
+    setTodo("");
   };
+
+
   return (
     <>
       <form action="" className="task-form" onSubmit={handleSubmit}>
@@ -22,9 +35,13 @@ const CreateTasks = () => {
             required
             value={todo}
             onChange={(e) => setTodo(e.target.value)}
-            placeholder="Enter Tasks Here"
+            placeholder="Enter Your Tasks Here"
           />
-          <button className="btn hover:bg-slate-700">Submit</button>
+          <div className="btn-container"><i className='bx bx-plus-circle'></i>
+          <button className="btn1 hover:bg-slate-700">
+            {editTaskId ? "Update Task" : "Create task"}
+          </button>
+          </div>
         </div>
       </form>
     </>
