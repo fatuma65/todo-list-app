@@ -16,6 +16,7 @@ const Tasks = () => {
   const handleEditing = (task) => {
     setIsEditing(true);
     setEditTaskId(task.id);
+    console.log(isEditing)
   };
   return (
     <>
